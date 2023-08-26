@@ -3,13 +3,15 @@ import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import Card from "antd/es/card/Card";
 import "./Products.scss"
 
+
 const Products = () => {
-  const { getProducts, products, addCart } = useContext(ProductsContext);
+  const { getProducts, products, addCart, cart } = useContext(ProductsContext);
 
   useEffect(() => {
     getProducts();
   }, []);
 
+  
   return (
     <div className="products-container">
       {products.map((product) => {
