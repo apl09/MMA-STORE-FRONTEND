@@ -13,9 +13,10 @@ const Header = () => {
   };
   return (
     <div className="header">
+      <Link to="/">Home /</Link>
       {token ? (
         <>
-          <Link to="/users">User /</Link>          
+          <Link to="/users"> User /</Link>          
 
           <button onClick={logoutUser}>
             Logout <UserDeleteOutlined />
@@ -24,7 +25,7 @@ const Header = () => {
         </>
       ) : (
         <Link to="/login">
-          Login <UserAddOutlined />
+           Login <UserAddOutlined />
         </Link>
       )}
     </div>

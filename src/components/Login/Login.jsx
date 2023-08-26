@@ -11,7 +11,7 @@ const Login = () => {
     notification.success({
         message: 'Successfully logged',
         description:
-          'Welcome to our e-commerce!!!',
+          'Welcome to MMA Store!!!',
       });
     setTimeout(() => {
         navigate("/users")

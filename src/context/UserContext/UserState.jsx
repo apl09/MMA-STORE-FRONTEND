@@ -52,11 +52,11 @@ export const UserProvider = ({ children }) => {
         authorization: token,
       },
     });
-    dispatch({//vaciamos el estado 
+    dispatch({
       type: "LOGOUT",
       payload: res.data,
     });
-    if (res.data) {//borramos el token del localStorage
+    if (res.data) {
       localStorage.removeItem("token");
     }
   };
