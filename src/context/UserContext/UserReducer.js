@@ -16,6 +16,12 @@ const users = (state, action) => {
           user: null,
           token: null,
         };
+      case "REGISTER":
+        return {
+          ...state,
+          user: action.payload,
+          
+        }  
   
       default:
         return state;
