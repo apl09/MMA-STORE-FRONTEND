@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import { Divider, List } from "antd";
+import { Divider, List, notification  } from "antd";
 import { OrdersContext } from "../../context/OrdersContext/ordersState";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext);
   const {createOrder} = useContext(OrdersContext)
+  const navigate = useNavigate();
 
   const data = cart.map((product) => product.name);
 
@@ -26,6 +29,15 @@ const Cart = () => {
             <button onClick={()=>{
                 createOrder(cart)
                 clearCart()
+                notification.success({
+                    message: 'Purchease made successfully!!',
+                    description:
+                      'See your order in your profile',
+                  });
+                setTimeout(() => {
+                    navigate("/users")
+                }, 2000);
+                
             }}>Buy</button>
           </div>
         }
