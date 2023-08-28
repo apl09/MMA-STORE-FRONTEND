@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import { Divider, List } from "antd";
-//import { OrdersContext } from "../../context/OrdersContext/OrdersState";
+import { OrdersContext } from "../../context/OrdersContext/ordersState";
+
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext);
-  //const {createOrder} = useContext(OrdersContext)
+  const {createOrder} = useContext(OrdersContext)
 
   const data = cart.map((product) => product.name);
+
+  const calculateTotalPrice = () => {
+    return cart.reduce((total, product) => total + product.price, 0);
+};
 
   return (
     <div>
@@ -28,6 +33,7 @@ const Cart = () => {
         dataSource={data}
         renderItem={(item) => <List.Item>{item}</List.Item>}
       />
+       <div className="total">Total:   {calculateTotalPrice().toFixed(2)}€</div>
     </div>
   );
 };

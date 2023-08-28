@@ -19,6 +19,7 @@ const Header = () => {
     logout();
     navigate("/login");
   };
+  
   return (
     <div className="header">
       <Link to="/">Home /</Link>

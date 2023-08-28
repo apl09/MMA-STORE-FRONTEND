@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import { OrdersProvider } from "./context/OrdersContext/ordersState";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <UserProvider>
           <ProductsProvider>
+            <OrdersProvider>
           <Header/>
           <Routes>
             <Route path="/" element={<Products />} />
@@ -21,6 +23,7 @@ function App() {
             <Route path="/users" element={<User />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
+          </OrdersProvider>
           </ProductsProvider>
         </UserProvider>
       </BrowserRouter>
