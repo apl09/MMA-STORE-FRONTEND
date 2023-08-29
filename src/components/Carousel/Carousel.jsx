@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Carousel } from 'antd';
+import './Carousel.scss'
 import mma1 from '../../images/mma1.jpg';
 import mma2 from '../../images/mma2.jpg';
 import mma3 from '../../images/mma3.jpg';
@@ -28,18 +29,20 @@ const MMACarousel = () => {
   };
 
   return (
-    <div className='carousel'>
-      <Carousel ref={carouselRef} autoplay autoplaySpeed={3000} style={{ height: '500px' }}>
-        {images.map((image, index) => (
-          <div className='image' key={index}>
-            <img
-              src={image}
-              alt={`MMA Image ${index}`}
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            />
-          </div>
-        ))}
-      </Carousel>
+    <div className='carousel-container'>
+      <div className='carousel-wrapper'>
+        <Carousel ref={carouselRef} autoplay autoplaySpeed={3000}>
+          {images.map((image, index) => (
+            <div className='image' key={index}>
+              <img
+                src={image}
+                alt={`MMA Image ${index}`}
+                className='carousel-image'
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
       <div className='buttons'>
         <button onClick={handlePrev}>Previous</button>
         <button onClick={handleNext}>Next</button>
