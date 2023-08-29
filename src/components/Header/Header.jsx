@@ -22,10 +22,10 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Link to="/">Home /</Link>
+      <Link to="/">Home</Link>
       {token ? (
         <>
-          <Link to="/users"> User /</Link>
+          <Link to="/users">User</Link>
           <Link to="/cart">
             <Badge count={cart.length} size="small">
               <ShoppingCartOutlined />
@@ -42,7 +42,7 @@ const Header = () => {
             Login <UserAddOutlined />
           </Link>
           <Link  to="/register">           
-            /Register
+            Register
           </Link>
         </>
       )}

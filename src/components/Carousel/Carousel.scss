@@ -1,0 +1,17 @@
+@import "../../Colors.scss";  
+    
+    
+
+
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;    
+    
+}
+
+.buttons button:hover{
+    background-color: $hover-color;
+}
+

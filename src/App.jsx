@@ -9,6 +9,9 @@ import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
 import { OrdersProvider } from "./context/OrdersContext/ordersState";
 import Register from "./components/Register/Register";
+import Footer from "./components/Footer/Footer";
+import MMACarousel from "./components/Carousel/Carousel";
+
 
 function App() {
   return (
@@ -17,15 +20,16 @@ function App() {
         <UserProvider>
           <ProductsProvider>
             <OrdersProvider>
-          <Header/>
-          <Routes>
-            <Route path="/" element={<Products />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/users" element={<User />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-          </OrdersProvider>
+              <Header />              
+              <Routes>
+                <Route path="/" element={<div><MMACarousel /><Products /></div>} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/users" element={<User />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/register" element={<Register />} />
+              </Routes>
+              <Footer />
+            </OrdersProvider>
           </ProductsProvider>
         </UserProvider>
       </BrowserRouter>
@@ -34,5 +38,3 @@ function App() {
 }
 
 export default App;
-
-

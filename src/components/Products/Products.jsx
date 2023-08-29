@@ -23,7 +23,8 @@ const Products = () => {
             style={{
               width: 300,
               border: "1px solid",
-              borderColor: "blue",
+              borderColor: "balck",
+              
             }}
           > 
              <p>Type: {product.type} </p>
