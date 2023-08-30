@@ -1,39 +1,50 @@
 @import "../../Colors.scss";
 
 .header {
-    padding: 1.5em;
-    color: $terciary-color;
-    background-color: $primary-color;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 -1.5em;
-    padding-right: 5rem;
-    
-  }
+  padding: 1.5em;
+  color: $terciary-color;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 -1.5em;
+  padding-right: 5rem;
+
   .logo {
     padding-left: 4vh;
     display: flex;
     gap: 2vh;
   }
-  
+
   .login {
     display: flex;
     align-items: center;
     padding: 3vh;
-    
   }
+
   .login > *:not(:last-child) {
-    margin-right: 1rem; 
+    margin-right: 1rem;
   }
 
-  
-  
-
-
-
-  .logo img{
-    height: 70px;
+  .logo img {
+    height: 75px;
     width: auto;
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em 0;
+
+    .logo {
+      padding: 1em 0;
+    }
+
+    .login {
+        flex-direction: column;
+        padding: 1em 0;
+        gap: 1em;
+    }
+  }
+}
