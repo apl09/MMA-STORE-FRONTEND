@@ -1,0 +1,37 @@
+@import "../../Colors.scss";
+
+.cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px);
+    background: linear-gradient(to bottom, #000000, #ffffff);
+    
+  }
+  
+  .cart-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    border: 2px solid $primary-color;
+  }
+  
+  .cart-content:hover {
+    color: $hover-color;
+  }
+  
+  .cart-button {
+    background-color: $primary-color;
+    color: $terciary-color;
+  }
+  
+  .cart-button:hover {
+    color: $hover-color;
+  }
+  
+  .total {
+    margin-top: 1rem;
+    text-align: right;
+  }

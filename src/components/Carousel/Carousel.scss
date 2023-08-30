@@ -2,12 +2,14 @@
     
     
 .carousel-container {
-    margin-top: 10vh;
+    
+    
     position: relative;
     width: 100%;
     height: auto;
     background-color: $primary-color;
     overflow: hidden;
+    background: linear-gradient(to top, #000000, #ffffff); 
   }
   
   .carousel-wrapper {
@@ -15,7 +17,7 @@
     width: 100%; 
     max-width: 600px; 
     margin: 0 auto; 
-    
+    padding-top: 5vh;
   }
   
   .carousel-image {

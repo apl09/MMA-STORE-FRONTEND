@@ -2,7 +2,7 @@ import { createContext, useReducer } from "react";
 import axios from "axios";
 import ProductsReducer from "./ProductsReducer";
 
-const cart = localStorage.getItem("cart");
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
 const initalState = {

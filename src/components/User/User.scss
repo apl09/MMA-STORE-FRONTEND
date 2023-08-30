@@ -1,0 +1,37 @@
+@import "../../Colors.scss";
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(to bottom, $primary-color, $secondary-color);
+}
+
+.user-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.order-card {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  span {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Button, Form, Input, notification } from "antd";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
+import "./Register.scss";
 
 const Register = () => {
   const { register } = useContext(UserContext);
@@ -23,7 +24,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="register-container">
       <Form
         name="basic"
         labelCol={{
@@ -35,6 +36,7 @@ const Register = () => {
         style={{
           maxWidth: 600,
         }}
+        className="register-form"
         onFinish={onSubmit}
         autoComplete="off"
       >
@@ -98,7 +100,7 @@ const Register = () => {
             span: 16,
           }}
         >
-          <Button type="primary" htmlType="submit">
+          <Button className="button" type="primary" htmlType="submit"  >
             Register
           </Button>
         </Form.Item>

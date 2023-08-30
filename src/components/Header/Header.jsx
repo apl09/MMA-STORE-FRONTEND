@@ -1,16 +1,17 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom"; 
 import { UserContext } from "../../context/UserContext/UserState";
-import { UserDeleteOutlined, UserAddOutlined } from "@ant-design/icons";
+import { UserDeleteOutlined, UserAddOutlined, LoginOutlined, HomeOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import "./Header.scss";
-import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Badge } from "antd";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+import logo from '../../images/logo.png';
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
   const { cart } = useContext(ProductsContext);
   const navigate = useNavigate();
+  const location = useLocation();
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -22,10 +23,15 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Link to="/">Home</Link>
+      <div className="logo">        
+        <img src={logo} alt="Logo" />
+        <h2>Store</h2>
+      </div>
+      {location.pathname !== "/" && <Link to="/"> Home<HomeOutlined /></Link>}
+
       {token ? (
         <>
-          <Link to="/users">User</Link>
+          <Link to="/users">User<UserOutlined /></Link>
           <Link to="/cart">
             <Badge count={cart.length} size="small">
               <ShoppingCartOutlined />
@@ -38,12 +44,12 @@ const Header = () => {
         </>
       ) : (
         <>
+        <div className="login">
           <Link to="/login">
-            Login <UserAddOutlined />
+            Login <LoginOutlined />
           </Link>
-          <Link  to="/register">           
-            Register
-          </Link>
+          <Link to="/register">Register<UserAddOutlined /></Link>
+          </div>
         </>
       )}
     </div>

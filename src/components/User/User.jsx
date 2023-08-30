@@ -15,36 +15,32 @@ const User = () => {
   }
 
   return (
-    <div>
-      <Card
-        title={user.name}
-        bordered={true}
-        style={{
-          width: 300,
-          borderColor: "pink",
-          marginTop: "10px",
-        }}
-      >
-        <p>{user.email}</p>
-      </Card>
+    <div className="user-container">
+      <div className="user-content">
+        <Card
+          title={user.name}
+          bordered={true}
+          className="user-card"
+        >
+          <p>{user.email}</p>
+        </Card>
 
-      <div>
-        { user.Orders.map((order) => (
+        <div className="order-section">
+          {user.Orders.map((order) => (
             <div key={order.id} className="order-card">
               <p>Order nº: {order.id}</p>
-              <div>
-                { order.Products.map((product) => {
-                    return (
-                      <div key={product.id}>
-                        <span>
-                          {product.name} {product.price} €
-                        </span>
-                      </div>
-                    );
-                  })}
+              <div className="product-list">
+                {order.Products.map((product) => (
+                  <div key={product.id} className="product-item">
+                    <span>
+                      {product.name} {product.price} €
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
+        </div>
       </div>
     </div>
   );
