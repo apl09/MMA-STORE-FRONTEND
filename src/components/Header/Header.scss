@@ -1,0 +1,13 @@
+@import "../../Colors.scss";
+
+.header {
+   
+    padding: 1.5em;    
+    color: $terciary-color;
+    background-color: $primary-color;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    
+}
+    

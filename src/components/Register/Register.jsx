@@ -3,19 +3,23 @@ import { Button, Form, Input, notification } from "antd";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  const { login } = useContext(UserContext);
-  const navigate = useNavigate()
-  const onSubmit = (values) => {
-    login(values);
-    notification.success({
-        message: 'Successfully logged',
-        description:
-          'Welcome to MMA Store!!!',
+const Register = () => {
+  const { register } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const onSubmit = async (values) => {
+    try {
+      await register(values);
+      notification.success({
+        message: "Successfully registered",
+        description: "Ready to buy the Best MMA products?",
       });
-    setTimeout(() => {
-        navigate("/users")
-    }, 3000);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      console.error("Registration error:", error);
+    }
   };
 
   return (
@@ -35,16 +39,24 @@ const Login = () => {
         autoComplete="off"
       >
         <Form.Item
-          label="Email"
-          name="email"
+          label="Name"
+          name="name"
           rules={[
             {
               required: true,
-              message: "Please input your email!",
+              message: "Please put your name!",
             },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="Last name"
+          name="lastname"
+          rules={[
             {
-              type: "email",
-              message: "Please input a correct email!",
+              required: true,
+              message: "Please put your last name!",
             },
           ]}
         >
@@ -52,12 +64,28 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item
+          label="Email"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Please put your email!",
+            },
+            {
+              type: "email",
+              message: "Please put a correct email!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
           label="Password"
           name="password"
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: "Please put your password!",
             },
           ]}
         >
@@ -71,7 +99,7 @@ const Login = () => {
           }}
         >
           <Button type="primary" htmlType="submit">
-            Submit
+            Register
           </Button>
         </Form.Item>
       </Form>
@@ -79,4 +107,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

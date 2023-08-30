@@ -1,0 +1,10 @@
+@import "../../Colors.scss";
+
+.products-container{
+    
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:15px;
+    padding-top: px;
+}

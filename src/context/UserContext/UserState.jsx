@@ -32,7 +32,7 @@ export const UserProvider = ({ children }) => {
   const getUserInfo = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
     const res = await axios.get(
-      API_URL + "/users/", 
+      API_URL + "/users", 
       {
         headers: {
           authorization: token,
@@ -52,13 +52,21 @@ export const UserProvider = ({ children }) => {
         authorization: token,
       },
     });
-    dispatch({//vaciamos el estado 
+    dispatch({
       type: "LOGOUT",
       payload: res.data,
     });
-    if (res.data) {//borramos el token del localStorage
+    if (res.data) {
       localStorage.removeItem("token");
     }
+  };
+
+  const register = async (user) => {
+    const res = await axios.post(API_URL + "/users", user);
+    dispatch({
+      type: "REGISTER",
+      payload: res.data.user,
+    });
   };
 
   return (
@@ -68,7 +76,8 @@ export const UserProvider = ({ children }) => {
         user: state.user,
         login,
         getUserInfo,
-        logout
+        logout,
+        register
       }}
     >
       {children}
