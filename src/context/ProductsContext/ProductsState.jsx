@@ -2,12 +2,15 @@ import { createContext, useReducer } from "react";
 import axios from "axios";
 import ProductsReducer from "./ProductsReducer";
 
-const cart = JSON.parse(localStorage.getItem("cart")) || []
+const cart = localStorage.getItem("cart");
+
 
 const initalState = {
   products: [],
   cart: cart,
 };
+
+
 
 const API_URL = "http://localhost:3000";
 export const ProductsContext = createContext(initalState);
