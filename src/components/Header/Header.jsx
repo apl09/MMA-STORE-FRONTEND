@@ -21,6 +21,12 @@ const Header = () => {
     navigate("/login");
   };
 
+  const cartIconStyle = {
+    color: "white", 
+    fontSize: "18px",
+    hover: "grey" 
+  }
+
   return (
     <div className="header">
       <div className="logo">        
@@ -32,9 +38,9 @@ const Header = () => {
       {token ? (
         <>
           <Link to="/users">User<UserOutlined /></Link>
-          <Link to="/cart">
+          <Link to="/cart">Cart
             <Badge count={cart.length} size="small">
-              <ShoppingCartOutlined />
+              <ShoppingCartOutlined style={cartIconStyle}/>
             </Badge>
           </Link>
 
