@@ -6,16 +6,15 @@ import "./Login.scss";
 
 const Login = () => {
   const { login } = useContext(UserContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const onSubmit = (values) => {
     login(values);
     notification.success({
-        message: 'Successfully logged',
-        description:
-          'Welcome to MMA Store!!!',
-      });
+      message: "Successfully logged",
+      description: "Welcome to MMA Store!!!",
+    });
     setTimeout(() => {
-        navigate("/users")
+      navigate("/users");
     }, 3000);
   };
 

@@ -8,7 +8,7 @@ export const OrdersContext = createContext();
 
 export const OrdersProvider = ({ children }) => {
   const createOrder = async (order) => {
-    const token = JSON.parse(localStorage.getItem("token"))
+    const token = JSON.parse(localStorage.getItem("token")) || []
     
     
 

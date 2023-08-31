@@ -16,7 +16,7 @@ const Register = () => {
         description: "Ready to buy the Best MMA products?",
       });
       setTimeout(() => {
-        navigate("/");
+        navigate("/login");
       }, 3000);
     } catch (error) {
       console.error("Registration error:", error);
@@ -100,7 +100,7 @@ const Register = () => {
             span: 16,
           }}
         >
-          <Button className="button" type="primary" htmlType="submit"  >
+          <Button className="button" type="primary" htmlType="submit">
             Register
           </Button>
         </Form.Item>

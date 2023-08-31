@@ -14,14 +14,14 @@ const User = () => {
     return <Spin size="large" />;
   }
 
+  if (!user.Orders) {
+    return null; 
+  }
+
   return (
     <div className="user-container">
       <div className="user-content">
-        <Card
-          title={user.name}
-          bordered={true}
-          className="user-card"
-        >
+        <Card title={user.name} bordered={true} className="user-card">
           <p>{user.email}</p>
         </Card>
 

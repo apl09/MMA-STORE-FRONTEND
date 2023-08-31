@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import Card from "antd/es/card/Card";
-import "./Products.scss"
-
+import "./Products.scss";
 
 const Products = () => {
   const { getProducts, products, addCart, cart } = useContext(ProductsContext);
@@ -11,7 +10,6 @@ const Products = () => {
     getProducts();
   }, []);
 
-  
   return (
     <div className="products-container">
       {products.map((product) => {
@@ -28,7 +26,7 @@ const Products = () => {
               flexDirection: "column",
             }}
           >
-            <div style={{ flex: 1,  }}>
+            <div style={{ flex: 1 }}>
               <img
                 src={product.image}
                 alt={product.name}
@@ -40,7 +38,9 @@ const Products = () => {
               <p>Brand: {product.brand}</p>
               <p>Description: {product.content}</p>
               <p>Price: {product.price} €</p>
-              <button className="button" onClick={() => addCart(product)}>Add to cart</button>
+              <button className="button" onClick={() => addCart(product)}>
+                Add to cart
+              </button>
             </div>
           </Card>
         );

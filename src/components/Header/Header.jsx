@@ -1,11 +1,18 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom"; 
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
-import { UserDeleteOutlined, UserAddOutlined, LoginOutlined, HomeOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  UserDeleteOutlined,
+  UserAddOutlined,
+  LoginOutlined,
+  HomeOutlined,
+  ShoppingCartOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import "./Header.scss";
 import { Badge } from "antd";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import logo from '../../images/logo.png';
+import logo from "../../images/logo.png";
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
@@ -22,26 +29,36 @@ const Header = () => {
   };
 
   const cartIconStyle = {
-    color: "white", 
+    color: "white",
     fontSize: "18px",
-    hover: "grey" 
-  }
+    hover: "grey",
+  };
 
   return (
     <div className="header">
-      <div className="logo">        
+      <div className="logo">
         <img src={logo} alt="Logo" />
         <h2>Store</h2>
       </div>
-      
-      {location.pathname !== "/" && <Link to="/"> Home<HomeOutlined /></Link>}
+
+      {location.pathname !== "/" && (
+        <Link to="/">
+          
+          Home
+          <HomeOutlined />
+        </Link>
+      )}
 
       {token ? (
         <>
-          <Link to="/users">User<UserOutlined /></Link>
-          <Link to="/cart">Cart
+          <Link to="/users">
+            User
+            <UserOutlined />
+          </Link>
+          <Link to="/cart">
+            Cart
             <Badge count={cart.length} size="small">
-              <ShoppingCartOutlined style={cartIconStyle}/>
+              <ShoppingCartOutlined style={cartIconStyle} />
             </Badge>
           </Link>
 
@@ -51,11 +68,14 @@ const Header = () => {
         </>
       ) : (
         <>
-        <div className="login">
-          <Link to="/login">
-            Login <LoginOutlined />
-          </Link>
-          <Link to="/register">Register<UserAddOutlined /></Link>
+          <div className="login">
+            <Link to="/login">
+              Login <LoginOutlined />
+            </Link>
+            <Link to="/register">
+              Register
+              <UserAddOutlined />
+            </Link>
           </div>
         </>
       )}
