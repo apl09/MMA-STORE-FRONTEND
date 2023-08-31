@@ -22,16 +22,26 @@ const Products = () => {
             bordered={false}
             style={{
               width: 300,
-              border: "1px solid",
-              borderColor: "balck",
-              
+              border: "3px solid",
+              borderColor: "black",
+              display: "flex",
+              flexDirection: "column",
             }}
-          > 
-             <p>Type: {product.type} </p>
-             <p>Brand: {product.brand} </p>
-             <p>Description: {product.content} </p>
-             <p>Price: {product.price} €</p>            
-            <button onClick={() => addCart(product)}>Add to cart</button>
+          >
+            <div style={{ flex: 1,  }}>
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{ width: "100%", height: "auto", image: "cover" }}
+              />
+            </div>
+            <div>
+              <p>Type: {product.type}</p>
+              <p>Brand: {product.brand}</p>
+              <p>Description: {product.content}</p>
+              <p>Price: {product.price} €</p>
+              <button onClick={() => addCart(product)}>Add to cart</button>
+            </div>
           </Card>
         );
       })}
