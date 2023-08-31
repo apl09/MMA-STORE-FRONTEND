@@ -91,8 +91,8 @@ I will upload the project to a public repository on GitHub and leave the link to
 Thank you for taking the time to review my README! 😄 If you have any other requests or changes, please let me know. Good luck with your task! 🚀
 
 ## Preview
-![foto](./src/assets/preview1.mp4)
-![foto](./src/assets/preview2.mp4)
+
+![foto](./src/assets/preview2.gif)
 
 
 ## Contact
