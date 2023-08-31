@@ -33,6 +33,7 @@ const Header = () => {
         <img src={logo} alt="Logo" />
         <h2>Store</h2>
       </div>
+      
       {location.pathname !== "/" && <Link to="/"> Home<HomeOutlined /></Link>}
 
       {token ? (

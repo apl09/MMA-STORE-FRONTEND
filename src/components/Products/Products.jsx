@@ -40,7 +40,7 @@ const Products = () => {
               <p>Brand: {product.brand}</p>
               <p>Description: {product.content}</p>
               <p>Price: {product.price} €</p>
-              <button onClick={() => addCart(product)}>Add to cart</button>
+              <button className="button" onClick={() => addCart(product)}>Add to cart</button>
             </div>
           </Card>
         );
