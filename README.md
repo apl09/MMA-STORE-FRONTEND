@@ -1,6 +1,6 @@
 # Frontend Project - Ecommerce 🚀
 
-<h1>Exploring the Possibilities of Mongoose</h1>
+<h1>Exploring the Possibilities of React+Vite</h1>
 
 <h3 align="center">TEAM TESTING</h3>
 
